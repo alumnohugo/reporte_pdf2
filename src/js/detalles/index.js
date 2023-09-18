@@ -6,10 +6,7 @@ const btnBuscar = document.querySelector('form');
 const buscar = async (event) => {
     event.preventDefault();
 
-    const fechaInicio = document.getElementById('fechaInicio').value;
-    const fechaFin = document.getElementById('fechaFin').value;
-
-    const url = `/reporte_pdf2/API/detalles/buscar?fechaInicio=${fechaInicio}&fechaFin=${fechaFin}`;
+    const url = `/reporte_pdf2/API/pdf`;
 
     try {
         const respuesta = await fetch(url, {
@@ -20,9 +17,8 @@ const buscar = async (event) => {
         });
 
         if (respuesta.ok) {
-            const data = await respuesta.json();
-            console.log(data);
-           
+          
+            window.location.href = '/reporte_pdf2/pdf';
         } else {
             console.log('Error en la respuesta del servidor');
         }
