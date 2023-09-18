@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 const btnBuscar = document.querySelector('form');
 
 const buscar = async (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+    event.preventDefault();
 
     const fechaInicio = document.getElementById('fechaInicio').value;
     const fechaFin = document.getElementById('fechaFin').value;
@@ -22,7 +22,7 @@ const buscar = async (event) => {
         if (respuesta.ok) {
             const data = await respuesta.json();
             console.log(data);
-            // Realizar acciones con los datos recibidos
+           
         } else {
             console.log('Error en la respuesta del servidor');
         }
@@ -32,6 +32,3 @@ const buscar = async (event) => {
 }
 
 btnBuscar.addEventListener('submit', buscar);
-
-
-   
